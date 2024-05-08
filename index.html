@@ -26,6 +26,7 @@
     <hr>
     <button class="button1 ps-translate" data-key="button-es"></button>
     <button class="button2 ps-translate" data-key="button-en"></button>
+    <button class="button3 ps-translate" data-key="button-fr"></button>
     <hr>
     <div><span class="ps-translate" data-key="developer">Desarrollado por</span> <a href="https://pluginsoft.net">PluginSoft.net</a></div>
   </body>
@@ -37,40 +38,56 @@
       "title":
       {
         "en": "Translation example",
-        "es": "Ejemplo de traducción"
+        "es": "Ejemplo de traducción",
+        "fr": "Exemple de traduction"
       },
       "hello":
       {
         "en": "Hello world",
-        "es": "Hola mundo"
+        "es": "Hola mundo",
+        "fr": "salut monde"
+
       },
       "label-input1": {
         "en": "Write something",
-        "es": "Ingrese un valor"
+        "es": "Ingrese un valor",
+        "fr": "Entrez une valeur"
       },
       "input1": {
         "en": "Name",
-        "es": "Nombre"
+        "es": "Nombre",
+        "fr": "Nom"
       },
       "button-form": {
         "en": "Send",
-        "es": "Enviar"
+        "es": "Enviar",
+        "fr": "Envoyer"
+
       },
       "button-en": {
         "en": "English",
-        "es": "Inglés"
+        "es": "Inglés",
+        "es": "French"
       },
       "button-es": {
         "en": "Spanish",
-        "es": "Español"
+        "es": "Español",
+        'fr': 'Frances'
+      },
+      "button-fr": {
+        "en": "Anglais",
+        "es": "Espagnol",
+        'fr': 'Français'
       },
       "developer": {
         "en": "Developed by",
-        "es": "Desarrollado por"
+        "es": "Desarrollado por",
+        "fr": "Développé par"
       },
       "msg": {
         "en": "Form sent!",
-        "es": "¡Formulario enviado!"
+        "es": "¡Formulario enviado!",
+        "fr": "Formulaire soumis!"
       }
     };
 
@@ -88,6 +105,10 @@
 
     document.querySelector(".button2").addEventListener("click", function (e) {
       pst.translateAll2('en');
+    })
+
+    document.querySelector(".button3").addEventListener("click", function (e) {
+      pst.translateAll2('fr');
     })
 
     document.querySelector(".buttonForm").addEventListener("click", function (e) {
