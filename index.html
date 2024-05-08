@@ -1,7 +1,98 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 </body>
+</html>*/ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="ps-translate" data-key="title">Translate example</title>
+  </head>
+  <body>
+    <h1 class="ps-translate" data-key="title">Default text</h1>
+    <div class="ps-translate" data-key="hello">Default text 2</div>
+    <form action="" method="post">
+      <label for="input1" class="ps-translate" data-key="label-input1">Default text 3</label>
+      <input type="text" name="" id="input1" class="ps-translate" data-key="input1" placeholder="Default text 4">
+      <br>
+      <button class="buttonForm ps-translate" data-key="button-form">Enviar</button>
+    </form>
+    <hr>
+    <button class="button1 ps-translate" data-key="button-es"></button>
+    <button class="button2 ps-translate" data-key="button-en"></button>
+    <hr>
+    <div><span class="ps-translate" data-key="developer">Desarrollado por</span> <a href="https://pluginsoft.net">PluginSoft.net</a></div>
+  </body>
+  <!-- Enlazamos el archivo JS / Link to JS file -->
+  <script src="js/ps-translate.js"></script>
+  <script>
+    //Diccionario / Dictionary
+    const langJson = {
+      "title":
+      {
+        "en": "Translation example",
+        "es": "Ejemplo de traducción"
+      },
+      "hello":
+      {
+        "en": "Hello world",
+        "es": "Hola mundo"
+      },
+      "label-input1": {
+        "en": "Write something",
+        "es": "Ingrese un valor"
+      },
+      "input1": {
+        "en": "Name",
+        "es": "Nombre"
+      },
+      "button-form": {
+        "en": "Send",
+        "es": "Enviar"
+      },
+      "button-en": {
+        "en": "English",
+        "es": "Inglés"
+      },
+      "button-es": {
+        "en": "Spanish",
+        "es": "Español"
+      },
+      "developer": {
+        "en": "Developed by",
+        "es": "Desarrollado por"
+      },
+      "msg": {
+        "en": "Form sent!",
+        "es": "¡Formulario enviado!"
+      }
+    };
+
+    //Inicializando el objeto / initializing the object
+    const pst = new PsTranslate(langJson, 'en');
+
+    //Ejemplo de la función setTranslation / setTranslation function example
+    pst.setTranslation('developer', 'es', 'Creado por');
+    pst.translateAll2(pst.activeLang);
+
+    //Acciones de botones / Buttons actions
+    document.querySelector(".button1").addEventListener("click", function (e) {
+      pst.translateAll2('es');
+    })
+
+    document.querySelector(".button2").addEventListener("click", function (e) {
+      pst.translateAll2('en');
+    })
+
+    document.querySelector(".buttonForm").addEventListener("click", function (e) {
+      alert(pst.getTranslation('msg', pst.activeLang));
+    })
+
+  </script>
 </html>
